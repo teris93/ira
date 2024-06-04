@@ -34,13 +34,13 @@ def values(message: telebot.types.Message):
 
 @bot.message_handler(
     commands=["stop"]
-)  # так как я бота тестировал в группе не из двух человек, бот реагировал на все
-# сообщения, что бы как то тормозить бота в его реализации использовал данную команду
+)  
+# сообщения, что бы как то тормозить бота 
 def strop_bot(message: telebot.types.Message):
     bot.send_message(
         message.chat.id, "Выключение бота!!!"
     )  # send_message, команда, которая говорит о том,
-    # что бот будет отправлять сообщение, важно знать id чата, в котором бот исопльзуется
+    # что бот будет отправлять сообщение, важно знать id чата, в котором бот используется
     bot.stop_polling()  # завершение работы бота
 
 
@@ -53,7 +53,7 @@ def convert(message: telebot.types.Message):
     try:  # отлавливание ошибки конструкцией tre-except-else
         correct_message = message.text.lower().split()  # регистрочувствительный ввод
         joke_message = message.text.split()  # так как бот тестировался в группе,
-        # наверное мне было важно сделать вывод таким, каким был ввод
+        
 
         if (
             len(correct_message) != 3
